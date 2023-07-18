@@ -1,0 +1,12 @@
+.profile__info {
+  display: grid;
+  grid-template-columns: minmax(min-content, max-content) 24px;
+  column-gap: 18px;
+  margin: 0 10px 0 30px;
+}
+
+@media screen and (max-width: 715px) {
+  .profile__info {
+    margin-top: 26px;
+  }
+}

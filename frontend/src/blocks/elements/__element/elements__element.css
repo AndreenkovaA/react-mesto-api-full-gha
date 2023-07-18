@@ -1,0 +1,12 @@
+.elements__element {
+  height: 367px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 610px) {
+  .elements__element {
+    margin-top: 20px;
+  }
+}

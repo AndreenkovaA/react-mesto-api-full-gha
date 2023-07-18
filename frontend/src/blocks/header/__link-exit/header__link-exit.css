@@ -1,0 +1,26 @@
+.header__link-exit {
+  height: 22px;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  border: none;
+  margin-left: 14px;
+}
+
+.header__link-exit:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* @media screen and (max-width: 550px) {
+  .header__button-exit {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 16px;
+    margin-right: 0;
+    background-size: contain;
+  }
+} */

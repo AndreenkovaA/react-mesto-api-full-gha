@@ -1,0 +1,20 @@
+.form__item-error {
+  display: flex;
+  max-width: 358px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #ffffff;
+  margin: 5px auto 0 36px;
+  position: fixed;
+}
+
+@media screen and (max-width: 550px) {
+  .form__item-error {
+    max-width: 238px;
+    margin-left: 22px;
+    min-height: 17px;
+    position: static;
+  }
+}

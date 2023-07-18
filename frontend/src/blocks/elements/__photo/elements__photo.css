@@ -1,0 +1,12 @@
+.elements__photo {
+  width: 100%;
+  height: 280px;
+  background-size: cover;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 610px) {
+  .elements__photo {
+    height: 282px;
+  }
+}

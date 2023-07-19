@@ -10,7 +10,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.85.54
+IP 51.250.85.54
 
 Frontend https://mesto.front.nomoredomains.xyz
 

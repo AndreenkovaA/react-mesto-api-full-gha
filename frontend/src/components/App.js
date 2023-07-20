@@ -46,10 +46,11 @@ function App() {
   const handleTokenCheck = () => {
     const token = localStorage.getItem('token');
     if (token) {
+      api.setToken(token)
       api.getInitData()
       .then(([initialCards, userData]) => {
-        setCurrentUser(userData);
-        setCards(initialCards);
+        setCurrentUser(userData.data);
+        setCards(initialCards.data);
       })
       .catch((err) => {
         console.log(err);
@@ -134,11 +135,11 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(id => id === currentUser._id);
     
     api.likeCard(card._id, isLiked
     ).then((newCard) => {
-        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+        setCards((state) => state.map((c) => c._id === card._id ? newCard.data : c));
     })
     .catch((err) => {
       console.log(err);
@@ -159,7 +160,7 @@ function App() {
   function handleUpdateUser(userData) {
     api.editProfile(userData)
       .then((userData) => {
-        setCurrentUser(userData);
+        setCurrentUser(userData.data);
         closeAllPopups();
       })
       .catch((err) => {
@@ -170,7 +171,7 @@ function App() {
   function handleUpdateAvatar(data) {
     api.changeAvatar(data)
       .then((userData) => {
-        setCurrentUser(userData);
+        setCurrentUser(userData.data);
         closeAllPopups();
       })
       .catch((err) => {
@@ -181,7 +182,7 @@ function App() {
   function handleAddPlaceSubmit(data) {
     api.addNewCard(data)
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        setCards([newCard.data, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {

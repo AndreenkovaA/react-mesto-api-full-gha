@@ -11,6 +11,10 @@ class Api {
     return res.json();
   }
 
+  setToken(token) {
+    this._headers.authorization = 'Bearer ' + token;
+  }
+
   getInitData() {
     return Promise.all([this.getInitialCards(), this.getInfoUser()])
   }
@@ -75,9 +79,9 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-63',
+  baseUrl: 'https://api.mesto.back.nomoredomains.xyz',
   headers: {
-    authorization: '00668478-52bf-4681-a622-26a2a81018b3',
+    authorization: 'Bearer ' + localStorage.getItem('token'),
     'Content-Type': 'application/json'
   }
 });
